@@ -1,3 +1,9 @@
+import {
+  DynamicContextProvider,
+  DynamicWidget,
+} from '@dynamic-labs/sdk-react-core';
+import { EthereumWalletConnectors } from '@dynamic-labs/ethereum';
+import { CodeXmlIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -27,7 +33,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <DynamicContextProvider
+          settings={{
+            environmentId: process.env.NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID!,
+            walletConnectors: [EthereumWalletConnectors],
+          }}
+        >
+          <header className="flex justify-between p-4 border-b">
+            <h1 className="text-3xl font-bold">Numler</h1>
+            <DynamicWidget />
+          </header>
+          <main>{children}</main>
+          <footer className="p-4 border-t">
+            <p className="flex items-center justify-center gap-x-1 text-sm text-gray-500">
+              Built with <CodeXmlIcon /> by Bucky Maler
+            </p>
+          </footer>
+        </DynamicContextProvider>
       </body>
     </html>
   );
