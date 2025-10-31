@@ -43,7 +43,7 @@ export default function RootLayout({
             <h1 className="text-3xl font-bold">Numler</h1>
             <DynamicWidget />
           </header>
-          <main>{children}</main>
+          <main className="py-6 px-4">{children}</main>
           <footer className="p-4 border-t">
             <p className="flex items-center justify-center gap-x-1 text-sm text-gray-500">
               Built with <CodeXmlIcon /> by Bucky Maler
