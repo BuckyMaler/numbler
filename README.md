@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Numbler
 
-## Getting Started
+[https://numbler-khaki.vercel.app](https://numbler-khaki.vercel.app)
 
-First, run the development server:
+## About
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) and built with TypeScript, shadcn/ui, Tailwind CSS, and the Dynamic React SDK.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 💪 TypeScript
+- 🏗️ Next.js (React framework & build system)
+  - Fast development builds
+  - Optimized production build
+- 🎨 shadcn/ui (component library)
+  - Accelerates development with pre-built components
+  - Provides design consistency
+- 💅 Tailwind CSS (CSS library)
+  - Accelerates development with utility classes
+  - Pairs well with shadcn/ui
+- 🛠️ Dynamic React SDK (authentication & user management library)
+  - SDK for interacting with the Dynamic API
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Requirements
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✅ = Full support  
+⛔ = Partial support  
+❌ = No support
 
-## Learn More
+| Requirement                                                                          | Support | Notes                                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Should use Dynamic SDK for user to log-in and store the user’s history in `metadata` | ✅      | <ul><li>Dynamic SDK provider and widget for log in</li><li>Game results are stored on the `numbler_game_results` property of user metadata and surfaced as stats in the win/loss modal</li></ul> |
+| Numbers and operators can appear multiple times                                      | ✅      |                                                                                                                                                                                                  |
+| Order of operation applies (\* and / are calculated before + and -)                  | ✅      |                                                                                                                                                                                                  |
+| Should accept cumulative solutions (e.g. 1+5\*15 === 15\*5+1)                        | ✅      |                                                                                                                                                                                                  |
+| After each guess the color of the tiles should change to reflect the status          | ✅      |                                                                                                                                                                                                  |
+| Controlling the game should be done with the mouse and keyboard                      | ✅      |                                                                                                                                                                                                  |
+| Should include reasonable test coverage                                              | ❌      |                                                                                                                                                                                                  |
+| Surprise us with something crypto related                                            | ❌      |                                                                                                                                                                                                  |
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerequisites
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- node 22.x
 
-## Deploy on Vercel
+- npm 10.x
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Running the App
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Run `npm install` to install all dependencies
+
+2. Run `cp .env.example .env.local` to setup your environment variables
+
+3. Run `npm run dev` to start the development server
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result
