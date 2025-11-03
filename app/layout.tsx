@@ -40,7 +40,7 @@ export default function RootLayout({
           }}
         >
           <header className="flex justify-between p-4 border-b">
-            <h1 className="text-3xl font-bold">Numler</h1>
+            <h1 className="text-3xl font-bold">Numbler</h1>
             <DynamicWidget />
           </header>
           <main className="py-6 px-4">{children}</main>
