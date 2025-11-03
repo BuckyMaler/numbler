@@ -36,6 +36,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 | Surprise us with something crypto related                                            | ✅      | <ul><li>I went a little rogue. 😅 Rather than building a crypto related feature, I created this [issue](https://github.com/BuckyMaler/numbler/issues/1) in hopes of potentially influencing direct business value for Dynamic React SDK consumers.</li></ul>                                                                                                                                                                            |
 | Should include reasonable test coverage                                              | ❌      | <ul><li>No tests due to time constraints</li><li>Given more time, I would lean primarily on integration testing components, but I would also unit test the game logic in `lib/game-logic.ts` and include a happy path e2e test.</li><li>While each type of test has its advantages, I would lean primarily on integration tests because they offer the best balance of simulating a user, test coverage, and execution speed.</li></ul> |
 
+> ℹ️ The hidden calculation is console logged for testing convenience.
+
 ## Development
 
 ### Prerequisites
