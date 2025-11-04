@@ -59,6 +59,7 @@ export function GameGrid({ guesses, currentGuess, cellStates }: GameGridProps) {
                 stateClasses[row.states[colIndex]],
                 row.isActive && char && 'scale-105 border-primary',
               )}
+              data-testid="game-cell"
             >
               {char}
             </div>

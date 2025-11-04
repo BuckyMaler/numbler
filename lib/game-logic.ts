@@ -127,6 +127,10 @@ export function generatePuzzle(): Puzzle {
     { equation: '15+3/3', target: 16 },
   ];
 
+  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_TEST === 'true') {
+    return puzzles[0];
+  }
+
   return puzzles[Math.floor(Math.random() * puzzles.length)];
 }
 

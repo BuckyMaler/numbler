@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "playwright test"
   },
   "simple-git-hooks": {
     "pre-commit": "npx pretty-quick --staged"
@@ -26,6 +27,7 @@
     "viem": "^2.38.5"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@tailwindcss/postcss": "^4.1.16",
     "@types/node": "^22.17.1",
     "@types/react": "^19.2.2",
