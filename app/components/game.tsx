@@ -37,7 +37,7 @@ export function Game() {
   const [errorMessage, setErrorMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
   const isLoggedIn = useIsLoggedIn();
-  const { sdkHasLoaded, user } = useDynamicContext();
+  const { sdkHasLoaded, user, showAuthFlow } = useDynamicContext();
   const { updateUser } = useUserUpdateRequest();
   const [gameResults, setGameResults] = useState<MetadataGameResult[]>([]);
   const [gameResultsStatus, setGameResultsStatus] =
@@ -155,7 +155,7 @@ export function Game() {
 
   const handleKeyPress = useCallback(
     (key: string) => {
-      if (gameState !== 'playing') return;
+      if (gameState !== 'playing' || showAuthFlow) return;
 
       setErrorMessage('');
 
@@ -170,7 +170,7 @@ export function Game() {
         }
       }
     },
-    [gameState, submitGuess, currentGuess],
+    [gameState, showAuthFlow, submitGuess, currentGuess],
   );
 
   useEffect(() => {
